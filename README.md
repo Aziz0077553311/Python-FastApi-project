@@ -43,6 +43,37 @@ CREATE TABLE recipe_tag (
     FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
 );
 
+Дополнительные файлы проекта
+Ниже приведены файлы с кодом, необходимым для реализации проекта FastAPI с операциями CRUD. Каждый файл заключён в тег <xaiArtifact> с уникальным artifact_id.
+
+1. database.py — Конфигурация базы данных
+2. models.py — Модели SQLAlchemy
+3. schemas.py — Схемы Pydantic
+4. crud.py — Операции CRUD
+5. main.py — Приложение FastAPI
+6. requirements.txt — Зависимости
+
+
+Установите зависимости:
+bash
+
+Копировать
+pip install -r requirements.txt
+Настройте PostgreSQL:
+Создайте базу данных в pgAdmin (например, recipe_db).
+Выполните SQL-команды из README.md для создания таблиц.
+Настройте database.py: Обновите переменную DATABASE_URL с вашими данными PostgreSQL.
+Инициализируйте базу данных:
+bash
+
+Копировать
+python database.py
+Запустите приложение FastAPI:
+bash
+
+Копировать
+uvicorn main:app --reload
+Доступ к API: Откройте браузер и перейдите по адресу http://127.0.0.1:8000/docs, чтобы взаимодействовать с API через Swagger UI.
 
 Следующий шаг это подключить pgadmin в файле database в поле DATABASE_URL = напиши свойё имя пользователя пороль, localhost:5432 и название database
 
